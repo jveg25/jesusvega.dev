@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jesús Vega — Data &amp; Analytics Engineer</title>
+  <meta name="description"
+    content="Jesús Vega — data and analytics engineer in Lima, Peru. Ten years building analytics for energy, pharmaceutical and mining companies.">
+
+  <link rel="canonical" href="https://jesusvega.dev/">
+  <link rel="alternate" hreflang="en" href="https://jesusvega.dev/">
+  <link rel="alternate" hreflang="es" href="https://jesusvega.dev/?lang=es">
+  <meta property="og:title" content="Jesús Vega — Data &amp; Analytics Engineer">
+  <meta property="og:description"
+    content="Ten years building analytics for energy, pharmaceutical and mining companies. Based in Lima, Peru.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://jesusvega.dev/">
+  <meta property="og:image" content="https://jesusvega.dev/assets/photo.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data: lets Google show this as a person rather than a generic
+       page. If you edit it, run the tests — the CSP hash in _headers must be
+       regenerated to match, and a test checks exactly that. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jesús Vega",
+  "url": "https://jesusvega.dev/",
+  "image": "https://jesusvega.dev/assets/photo.jpg",
+  "jobTitle": "Data & Analytics Engineer",
+  "email": "mailto:jesus.vega.ingenieria@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lima",
+    "addressCountry": "PE"
+  },
+  "worksFor": { "@type": "Organization", "name": "Infosys" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Universidad Católica San Pablo" },
+    { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de Ingeniería" }
+  ],
+  "knowsLanguage": ["es", "en", "de"],
+  "sameAs": [
+    "https://github.com/jveg25",
+    "https://www.linkedin.com/in/jesus-vega-data/"
+  ]
+}
+  </script>
+</head>
+
+<!-- data-lang drives which language is visible. Elements marked lang="es" are
+     hidden when it is "en", and vice versa — see styles.css. With JavaScript
+     off the page simply stays in English. -->
+
+<body data-lang="en">
+  <a class="skip-link" href="#main"><span lang="en">Skip to content</span><span lang="es">Ir al contenido</span></a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <h1 class="site-name">Jesús Vega</h1>
+        <p class="site-tagline">Lima, Perú</p>
+      </div>
+
+      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-set-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+
+    <nav class="tabs wrap" aria-label="Sections">
+      <a href="#about" data-tab="about"><span lang="en">About</span><span lang="es">Perfil</span></a>
+      <a href="#work" data-tab="work"><span lang="en">Work</span><span lang="es">Experiencia</span></a>
+      <a href="#education" data-tab="education"><span lang="en">Education</span><span lang="es">Formación</span></a>
+      <a href="#skills" data-tab="skills"><span lang="en">Skills</span><span lang="es">Habilidades</span></a>
+      <a href="#projects" data-tab="projects"><span lang="en">Projects</span><span lang="es">Proyectos</span></a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+
+    <!-- ═══════════════════════════════════════════════════════ ABOUT ══ -->
+    <section id="about" class="panel">
+      <div class="portrait">
+        <div class="portrait-ring">
+          <img src="assets/photo.jpg" alt="Jesús Vega" width="260" height="260">
+        </div>
+      </div>
+
+      <div class="prose">
+        <p lang="en">
+          Hola — I'm Jesús, a mechanical–electrical engineer who moved into data. For over ten years
+          I've built the analytics that energy, pharmaceutical and mining companies run on:
+          extracting and cleaning data, automating the processes nobody wants to do by hand, and
+          turning the result into dashboards and models people actually use to decide things.
+        </p>
+        <p lang="es">
+          Hola, soy Jesús, ingeniero mecánico electricista que se pasó a los datos. Durante más de
+          diez años he construido la analítica sobre la que operan empresas de energía, farmacéuticas
+          y mineras: extraer y limpiar datos, automatizar los procesos que nadie quiere hacer a mano,
+          y convertir el resultado en dashboards y modelos que la gente realmente usa para decidir.
+        </p>
+
+        <p lang="en">
+          Right now I'm a Tech Lead at Infosys, working on analytics for L'Oréal North America.
+          Before that I spent a year and a half at Adium building the data layer behind a
+          pharmaceutical sales force across seventeen Latin American countries, and three years at
+          Luz del Sur, Lima's electricity distributor, tracking down energy losses. Lately my
+          attention has been on LLM systems — retrieval, evaluation, and agents that do real work
+          rather than demos.
+        </p>
+        <p lang="es">
+          Actualmente soy Tech Lead en Infosys, trabajando en analítica para L'Oréal Norteamérica.
+          Antes pasé año y medio en Adium construyendo la capa de datos detrás de una fuerza de
+          ventas farmacéutica en diecisiete países de Latinoamérica, y tres años en Luz del Sur, la
+          distribuidora eléctrica de Lima, rastreando pérdidas de energía. Últimamente me he enfocado
+          en sistemas con LLMs: recuperación, evaluación y agentes que hacen trabajo real, no demos.
+        </p>
+      </div>
+
+      <ul class="links">
+        <li><a href="https://github.com/jveg25">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jesus-vega-data/">LinkedIn</a></li>
+        <li><a href="mailto:jesus.vega.ingenieria@outlook.com">Email</a></li>
+        <!-- WhatsApp username link — verify this opens your chat before launch. -->
+        <li><a href="https://wa.me/jesusvega.dev">WhatsApp</a></li>
+      </ul>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════ WORK ══ -->
+    <section id="work" class="panel">
+      <h2 class="section-title accent-blue"><span lang="en">Work</span><span lang="es">Experiencia</span></h2>
+      <p class="section-intro">
+        <span lang="en">Ten years turning operational data into decisions — energy, pharmaceuticals,
+          mining.</span>
+        <span lang="es">Diez años convirtiendo datos operativos en decisiones: energía, farmacéutica,
+          minería.</span>
+      </p>
+
+      <article class="entry">
+        <div class="entry-logo" data-monogram="I"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org">Infosys</h3>
+              <p class="entry-role"><span lang="en">Tech Lead</span><span lang="es">Tech Lead</span></p>
+            </div>
+            <div class="entry-meta">
+              <span>Lima, Perú</span>
+              <span><span lang="en">May 2026 — Present</span><span lang="es">May 2026 — Actualidad</span></span>
+            </div>
+          </div>
+          <p class="entry-desc">
+            <span lang="en">Analytics for L'Oréal North America: Power BI dashboards and reports
+              built on GCP BigQuery, translating business requirements into models the commercial
+              teams use directly.</span>
+            <span lang="es">Analítica para L'Oréal Norteamérica: dashboards y reportes en Power BI
+              sobre GCP BigQuery, traduciendo requerimientos de negocio en modelos que los equipos
+              comerciales usan directamente.</span>
+          </p>
+          <ul class="pills">
+            <li>Power BI</li>
+            <li>BigQuery</li>
+            <li>GCP</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-logo" data-monogram="A"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org">Adium <span class="entry-note">(Tecnofarma)</span></h3>
+              <p class="entry-role">
+                <span lang="en">Data Coordinator — Sales Force Effectiveness</span>
+                <span lang="es">Coordinador de Datos — Sales Force Effectiveness</span>
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span>Lima, Perú</span>
+              <span>Oct 2024 — Abr 2026</span>
+            </div>
+          </div>
+          <p class="entry-desc">
+            <span lang="en">Owned the data behind a pharmaceutical sales force operating in
+              seventeen Latin American countries — market share analysis, performance KPIs, and
+              medical sample allocation driven by physician segmentation. Built an AI agent with
+              LangGraph giving reps conversational access to technical data and KPIs, and cut Close
+              Up and IQVIA dashboard refreshes from eight hours to ten minutes.</span>
+            <span lang="es">Responsable de los datos detrás de una fuerza de ventas farmacéutica en
+              diecisiete países de Latinoamérica: análisis de market share, KPIs de desempeño y
+              asignación de muestras médicas según segmentación de médicos. Desarrollé un agente de
+              IA con LangGraph que dio a los representantes acceso conversacional a datos técnicos y
+              KPIs, y reduje la actualización de los dashboards de Close Up e IQVIA de ocho horas a
+              diez minutos.</span>
+          </p>
+          <ul class="pills">
+            <li>Python</li>
+            <li>Power BI</li>
+            <li>Spark</li>
+            <li>SQL</li>
+            <li>Microsoft Fabric</li>
+            <li>DuckDB</li>
+            <li>LangGraph</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-logo" data-monogram="L"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org">Luz del Sur</h3>
+              <p class="entry-role">
+                <span lang="en">Electricity distributor for southern and eastern Lima</span>
+                <span lang="es">Distribuidora eléctrica del sur y este de Lima</span>
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span>Lima, Perú</span>
+              <span>Sep 2021 — Oct 2024</span>
+            </div>
+          </div>
+
+          <ul class="roles">
+            <li>
+              <span lang="en">Free Market Clients Coordinator</span>
+              <span lang="es">Coordinador de Clientes Libres</span>
+              <em>Oct 2023 — Oct 2024</em>
+            </li>
+            <li>
+              <span lang="en">Energy Loss Control Analyst</span>
+              <span lang="es">Analista de Control de Pérdidas</span>
+              <em>May 2022 — Oct 2023</em>
+            </li>
+            <li>
+              <span lang="en">Commercial Inspector</span>
+              <span lang="es">Inspector Comercial</span>
+              <em>Sep 2021 — May 2022</em>
+            </li>
+          </ul>
+
+          <p class="entry-desc">
+            <span lang="en">Automated the ETL and standardisation of meter measurements feeding
+              internal reporting, and built the dashboards used to track consumption, price and
+              losses. Identified over twenty measurement faults leaking roughly 488 MWh a month —
+              about USD 204K a year — and delivered two internal web platforms for scheduling megger
+              tests and reconnections that saved more than 200 man-hours monthly.</span>
+            <span lang="es">Automaticé el ETL y la estandarización de mediciones de medidores que
+              alimentan el reporting interno, y construí los dashboards para seguir consumo, precio y
+              pérdidas. Identifiqué más de veinte casos de medición defectuosa que representaban unos
+              488 MWh mensuales — cerca de USD 204K al año — y entregué dos plataformas web internas
+              para programar pruebas megger y reconexiones, ahorrando más de 200 horas-hombre al
+              mes.</span>
+          </p>
+          <ul class="pills">
+            <li>Python</li>
+            <li>PostgreSQL</li>
+            <li>Power BI</li>
+            <li>ETL</li>
+            <li>OCR</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-logo" data-monogram="H"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org">Hatch Asociados</h3>
+              <p class="entry-role"><span lang="en">Project Engineer</span><span lang="es">Ingeniero de
+                  Proyectos</span></p>
+            </div>
+            <div class="entry-meta">
+              <span>Lima, Perú</span>
+              <span>Abr 2019 — Ago 2021</span>
+            </div>
+          </div>
+          <p class="entry-desc">
+            <span lang="en">Electrical engineering for mining and infrastructure projects:
+              calculation reports, single-line diagrams, equipment layouts and grounding grids, plus
+              schedule and budget control in SAP. Work for Nexa Resources (Cajamarquilla refinery),
+              Minera Chinalco, and Peña Colorada in Mexico.</span>
+            <span lang="es">Ingeniería eléctrica para proyectos mineros y de infraestructura:
+              memorias de cálculo, diagramas unifilares, planos de distribución de equipos y mallas a
+              tierra, además de control de cronograma y presupuesto en SAP. Trabajo para Nexa
+              Resources (refinería de Cajamarquilla), Minera Chinalco y Peña Colorada en
+              México.</span>
+          </p>
+          <ul class="pills">
+            <li>AutoCAD</li>
+            <li>ETAP</li>
+            <li>Dialux</li>
+            <li>SAP</li>
+            <li>MicroStation</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-logo" data-monogram="·"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org"><span lang="en">Earlier</span><span lang="es">Inicios</span></h3>
+              <p class="entry-role">
+                <span lang="en">Engineering assistant and internships</span>
+                <span lang="es">Asistente de ingeniería y prácticas</span>
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span>Lima, Perú</span>
+              <span>2015 — 2019</span>
+            </div>
+          </div>
+          <ul class="roles">
+            <li>
+              <span lang="en">Engineering Assistant — Coviem</span>
+              <span lang="es">Asistente de Ingeniería — Coviem</span>
+              <em>Oct 2018 — Abr 2019</em>
+            </li>
+            <li>
+              <span lang="en">Intern — Hatch Asociados</span>
+              <span lang="es">Practicante — Hatch Asociados</span>
+              <em>Abr 2017 — Oct 2018</em>
+            </li>
+            <li>
+              <span lang="en">Intern — Luz del Sur</span>
+              <span lang="es">Practicante — Luz del Sur</span>
+              <em>Oct 2015 — Abr 2017</em>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ EDUCATION ══ -->
+    <section id="education" class="panel">
+      <h2 class="section-title accent-blue"><span lang="en">Education</span><span lang="es">Formación</span></h2>
+      <p class="section-intro">
+        <span lang="en">Engineering foundations, now data science.</span>
+        <span lang="es">Base en ingeniería, ahora ciencia de datos.</span>
+      </p>
+
+      <article class="entry">
+        <div class="entry-logo has-logo" style="background-image:url(assets/ucsp.png)"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org">Universidad Católica San Pablo</h3>
+              <p class="entry-role">
+                <span lang="en">Master's in Data Science</span>
+                <span lang="es">Maestría en Ciencia de Datos</span>
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span>Arequipa, Perú</span>
+              <span><span lang="en">In progress</span><span lang="es">En curso</span></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-logo has-logo" style="background-image:url(assets/uni.png)"></div>
+        <div class="entry-body">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-org">Universidad Nacional de Ingeniería</h3>
+              <p class="entry-role">
+                <span lang="en">Bachelor's — Mechanical Electrical Engineering</span>
+                <span lang="es">Bachiller — Ingeniería Mecánica Eléctrica</span>
+              </p>
+            </div>
+            <div class="entry-meta">
+              <span>Lima, Perú</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="certifications">
+        <h3 class="cert-heading"><span lang="en">Certifications</span><span lang="es">Certificaciones</span></h3>
+
+        <article class="entry">
+          <!-- Official Microsoft associate-tier certification badge, from
+               learn.microsoft.com/media/learn/certification/badges/ -->
+          <div class="entry-logo has-logo" style="background-image:url(assets/dp600.svg)"></div>
+          <div class="entry-body">
+            <div class="entry-head">
+              <div>
+                <h4 class="entry-org">Fabric Analytics Engineer Associate</h4>
+                <p class="entry-role">Microsoft Certified — DP-600</p>
+              </div>
+              <div class="entry-meta">
+                <span>Microsoft</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
+          <div class="entry-logo has-logo" style="background-image:url(assets/cambridge.png)"></div>
+          <div class="entry-body">
+            <div class="entry-head">
+              <div>
+                <h4 class="entry-org">Certificate in Advanced English</h4>
+                <p class="entry-role">CAE — C1</p>
+              </div>
+              <div class="entry-meta">
+                <span>Cambridge</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ SKILLS ══ -->
+    <section id="skills" class="panel">
+      <h2 class="section-title accent-blue"><span lang="en">Skills</span><span lang="es">Habilidades</span></h2>
+      <p class="section-intro">
+        <span lang="en">What I reach for, roughly in order of how often.</span>
+        <span lang="es">Lo que uso, más o menos en orden de frecuencia.</span>
+      </p>
+
+      <div class="skill-group">
+        <h3><span lang="en">Data &amp; Analytics</span><span lang="es">Datos y Analítica</span></h3>
+        <ul class="pills">
+          <li>Microsoft Fabric</li>
+          <li>Power BI</li>
+          <li>SQL</li>
+          <li>Spark</li>
+          <li>DuckDB</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3><span lang="en">Programming</span><span lang="es">Programación</span></h3>
+        <ul class="pills">
+          <li>Python</li>
+          <li>pandas</li>
+          <li>PostgreSQL</li>
+          <li>ETL</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3><span lang="en">AI &amp; LLM</span><span lang="es">IA y LLM</span></h3>
+        <ul class="pills">
+          <li>LangGraph</li>
+          <li>RAG</li>
+          <li>pgvector</li>
+          <li>OpenAI API</li>
+          <li>n8n</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3><span lang="en">Cloud &amp; Platform</span><span lang="es">Cloud y Plataforma</span></h3>
+        <ul class="pills">
+          <li>Azure</li>
+          <li>GCP / BigQuery</li>
+          <li>Docker</li>
+          <li>Airflow</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3><span lang="en">Engineering</span><span lang="es">Ingeniería</span></h3>
+        <ul class="pills">
+          <li>AutoCAD</li>
+          <li>ETAP</li>
+          <li>Dialux</li>
+          <li>SAP</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3><span lang="en">Languages</span><span lang="es">Idiomas</span></h3>
+        <ul class="pills">
+          <li><span lang="en">Spanish — native</span><span lang="es">Español — nativo</span></li>
+          <li><span lang="en">English — professional (CAE)</span><span lang="es">Inglés — profesional (CAE)</span></li>
+          <li><span lang="en">German — elementary</span><span lang="es">Alemán — básico</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════ PROJECTS ══ -->
+    <section id="projects" class="panel">
+      <h2 class="section-title accent-gold"><span lang="en">Projects</span><span lang="es">Proyectos</span></h2>
+      <p class="section-intro">
+        <span lang="en">Things I build outside work, mostly to understand them properly.</span>
+        <span lang="es">Cosas que construyo fuera del trabajo, sobre todo para entenderlas bien.</span>
+      </p>
+
+      <article class="project">
+        <div class="project-head">
+          <h3><a href="https://github.com/jveg25/llm-zoomcamp-jesus-vega-capstone-project">Personal Instructor</a></h3>
+          <p class="project-meta">RAG · <span lang="en">Energy research</span><span lang="es">Investigación
+              energética</span></p>
+        </div>
+        <p class="project-desc">
+          <span lang="en">Retrieval-augmented Q&amp;A over battery energy storage research papers.
+            Hybrid retrieval — pgvector similarity and Postgres full-text search fused with
+            Reciprocal Rank Fusion — feeds grounded, cited answers carrying an
+            <em>answer found</em> flag. Includes an admin panel for managing the corpus,
+            Airflow-orchestrated ingestion, LLM-as-judge evaluation across prompt variants, and a
+            Grafana dashboard tracking cost and latency per conversation. Built as the capstone for
+            the DataTalksClub LLM Zoomcamp.</span>
+          <span lang="es">Preguntas y respuestas aumentadas por recuperación sobre papers de
+            almacenamiento de energía en baterías. La recuperación híbrida — similitud con pgvector y
+            búsqueda de texto completo en Postgres, fusionadas con Reciprocal Rank Fusion — alimenta
+            respuestas fundamentadas y citadas, con una bandera de <em>respuesta encontrada</em>.
+            Incluye panel de administración del corpus, ingesta orquestada con Airflow, evaluación
+            con LLM-as-judge sobre variantes de prompt, y un dashboard de Grafana que sigue costo y
+            latencia por conversación. Proyecto final del LLM Zoomcamp de DataTalksClub.</span>
+        </p>
+        <ul class="pills">
+          <li>Python</li>
+          <li>FastAPI</li>
+          <li>pgvector</li>
+          <li>Airflow</li>
+          <li>Docker</li>
+          <li>Streamlit</li>
+        </ul>
+        <p class="project-links">
+          <a href="https://personalinstructor.jesusvega.dev"><span lang="en">Live demo</span><span lang="es">Demo en
+              vivo</span></a>
+          <a href="https://github.com/jveg25/llm-zoomcamp-jesus-vega-capstone-project"><span lang="en">Source</span><span
+              lang="es">Código</span></a>
+        </p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>© <span id="year">2026</span> Jesús Vega</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

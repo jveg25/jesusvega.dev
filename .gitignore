@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Python (tests only — the site itself has no build step)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

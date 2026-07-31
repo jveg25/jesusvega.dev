@@ -1,0 +1,24 @@
+name: CI
+
+# Cloudflare Pages deploys straight from the default branch, so these checks are
+# the only gate between an edit and it being live. Keep them fast.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Run tests
+        run: uv run --frozen pytest

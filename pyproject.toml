@@ -1,0 +1,17 @@
+[project]
+name = "jesusvega-dev"
+version = "1.0.0"
+description = "Personal site for jesusvega.dev — static HTML/CSS/JS"
+requires-python = ">=3.11"
+dependencies = []          # the site ships zero runtime dependencies
+
+[dependency-groups]
+# Test-only. Nothing here is deployed; Cloudflare Pages serves the files as-is.
+dev = [
+    "pytest>=8.0",
+    "beautifulsoup4>=4.12",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

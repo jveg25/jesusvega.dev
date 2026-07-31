@@ -1,0 +1,28 @@
+# Response headers for Cloudflare Pages. This file is read by Pages at deploy
+# time and is not served to visitors. It does nothing on a local http.server —
+# to verify it, check the response headers on the deployed site.
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'sha256-pm3Of04sBb+hy8KsfpwF2qLGRa82RmY35aM12rJG2Zs='; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+
+# 'unsafe-inline' appears in style-src because logos are positioned with inline
+# style="background-image:…" attributes. The sha256 in script-src covers the
+# JSON-LD block in index.html — edit that block and the hash must change with
+# it, which tests/test_site.py enforces.
+
+# Images and fonts are versioned by hand, so a week is a safe compromise
+# between fast repeat visits and being able to swap the photo.
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# HTML must never be cached hard, or edits won't reach people who've visited.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/404.html
+  Cache-Control: public, max-age=0, must-revalidate

@@ -1,0 +1,601 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Jesus Vega — personal site
+   Layout is driven by CSS custom properties; change the palette in :root
+   and everything follows.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg: #f7f5f2;
+  --bg-raised: #fffdfa;
+  --text: #191817;
+  --text-muted: #6d6a64;
+  --rule: #e4dfd7;
+  --accent-blue: #5b7fc7;
+  --accent-gold: #d9a441;
+
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --measure: 46rem;
+  --pad: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16151a;
+    --bg-raised: #1e1d23;
+    --text: #ece9e4;
+    --text-muted: #a09c95;
+    --rule: #302e36;
+    --accent-blue: #7d9de0;
+    --accent-gold: #e8bd63;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--bg-raised);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── header ─────────────────────────────────────────────────────────── */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 1.25rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.site-tagline {
+  margin: 0.15rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Tabs scroll sideways on narrow screens rather than wrapping. */
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs a {
+  flex: none;
+  padding-bottom: 0.6rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s;
+}
+
+.tabs a:hover {
+  color: var(--text);
+}
+
+.tabs a[aria-current="page"] {
+  color: var(--text);
+  font-weight: 500;
+  border-bottom-color: var(--text);
+}
+
+/* ── panels ─────────────────────────────────────────────────────────── */
+
+main {
+  padding-block: 3rem 4rem;
+}
+
+.panel {
+  margin-bottom: 4rem;
+  /* Keeps #hash links from parking a heading underneath the sticky header. */
+  scroll-margin-top: 9rem;
+}
+
+/* With JS on, only the selected panel is shown. Without JS every panel
+   stays visible, so the page still reads top to bottom. */
+body.tabbed .panel {
+  display: none;
+  margin-bottom: 0;
+}
+
+body.tabbed .panel.is-active {
+  display: block;
+  animation: fade 0.25s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body.tabbed .panel.is-active {
+    animation: none;
+  }
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 6vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.015em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+  background: var(--accent-blue);
+}
+
+.section-title.accent-gold::after {
+  background: var(--accent-gold);
+}
+
+.section-intro {
+  color: var(--text-muted);
+  margin: 0 0 2.5rem;
+}
+
+/* ── about ──────────────────────────────────────────────────────────── */
+
+.portrait {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+/* Gradient ring: a padded gradient box with the photo inset inside it. */
+.portrait-ring {
+  width: 260px;
+  height: 260px;
+  max-width: 70vw;
+  max-height: 70vw;
+  padding: 4px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--accent-gold), var(--accent-blue), #c98bb0);
+}
+
+.portrait-ring>* {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-raised);
+}
+
+.portrait-fallback {
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 4rem;
+  color: var(--text-muted);
+}
+
+.prose p {
+  font-size: 1.1rem;
+  margin: 0 0 1.25rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.links a {
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: border-color 0.15s;
+}
+
+.links a:hover {
+  border-bottom-color: var(--text);
+}
+
+/* ── work / education entries ───────────────────────────────────────── */
+
+.entry {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1rem;
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.entry:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.entry-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Monogram stand-in until a real logo image is set. */
+.entry-logo[data-monogram]:not([style*="background-image"])::before {
+  content: attr(data-monogram);
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--text-muted);
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.entry-org {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.entry-role {
+  margin: 0.1rem 0 0;
+  font-size: 0.98rem;
+}
+
+.entry-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.entry-desc {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+}
+
+/* Smaller company names in parentheses, e.g. a former trading name. */
+.entry-note {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+/* Real logos, as opposed to the letter monogram fallback. Shown whole rather
+   than cropped, inset a little, on a white tile — institutional logos are drawn
+   for light backgrounds, so a tile keeps them legible in dark mode too. */
+.entry-logo.has-logo {
+  background-color: #fff;
+  background-size: 76%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.certifications {
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.cert-heading {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.certifications .entry:first-of-type {
+  padding-top: 0;
+}
+
+/* Role progression within a single employer. */
+.roles {
+  list-style: none;
+  padding: 0;
+  margin: 0.85rem 0 0;
+  border-left: 2px solid var(--rule);
+}
+
+.roles li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.15rem 1rem;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+.roles em {
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ── projects ───────────────────────────────────────────────────────── */
+
+.project {
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--rule);
+}
+
+.project:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.project-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+}
+
+.project-head h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.project-head h3 a {
+  text-decoration: none;
+}
+
+.project-head h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-head h3 a::after {
+  content: " ↗";
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
+
+.project-meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.project-desc {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+}
+
+.project-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* ── skills ─────────────────────────────────────────────────────────── */
+
+.skill-group {
+  margin-bottom: 2rem;
+}
+
+.skill-group h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+/* ── pills ──────────────────────────────────────────────────────────── */
+
+/* Colours rotate automatically by position, so adding a tag never means
+   choosing a colour. Tint and text are derived from one hue each. */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.pills li {
+  --hue: 220;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  color: hsl(var(--hue) 45% 38%);
+  background: hsl(var(--hue) 62% 95%);
+  border: 1px solid hsl(var(--hue) 45% 88%);
+}
+
+.pills li:nth-child(6n + 1) { --hue: 4; }
+.pills li:nth-child(6n + 2) { --hue: 150; }
+.pills li:nth-child(6n + 3) { --hue: 220; }
+.pills li:nth-child(6n + 4) { --hue: 40; }
+.pills li:nth-child(6n + 5) { --hue: 268; }
+.pills li:nth-child(6n + 6) { --hue: 187; }
+
+@media (prefers-color-scheme: dark) {
+  .pills li {
+    color: hsl(var(--hue) 60% 76%);
+    background: hsl(var(--hue) 32% 17%);
+    border-color: hsl(var(--hue) 28% 26%);
+  }
+}
+
+/* ── bilingual content ──────────────────────────────────────────────── */
+
+/* Both languages live in the markup side by side; only one is ever shown.
+   `data-lang` on <body> is the switch. Because the attribute is set in the
+   HTML itself, the page renders in English before any script runs — and stays
+   readable if JavaScript never runs at all. */
+
+body[data-lang="en"] [lang="es"] {
+  display: none;
+}
+
+body[data-lang="es"] [lang="en"] {
+  display: none;
+}
+
+.lang-toggle {
+  display: flex;
+  flex: none;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-raised);
+}
+
+.lang-toggle button {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.7rem;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lang-toggle button:hover {
+  color: var(--text);
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* ── 404 ────────────────────────────────────────────────────────────── */
+
+.notfound {
+  padding-block: 6rem 4rem;
+}
+
+.notfound-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+}
+
+/* ── footer ─────────────────────────────────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
+}

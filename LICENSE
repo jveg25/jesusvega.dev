@@ -1,0 +1,42 @@
+The code in this repository — HTML structure, CSS, JavaScript, tests and
+configuration — is released under the MIT License below. Reuse it freely.
+
+The MIT grant does NOT extend to:
+
+  * Personal content: the biography, work history, education and any other
+    text describing Jesús Vega. © 2026 Jesús Vega, all rights reserved.
+  * assets/photo.jpg — the portrait photograph. All rights reserved.
+  * Third-party logos and trademarks in assets/, which belong to their
+    respective owners and are reproduced here solely to identify the
+    institutions and certifications named on the page:
+      - dp600.svg      Microsoft Corporation
+      - ucsp.png       Universidad Católica San Pablo
+      - uni.png        Universidad Nacional de Ingeniería
+      - cambridge.png  University of Cambridge
+
+If you want to reuse this site as a template, take the code and replace the
+content and images with your own.
+
+---
+
+MIT License
+
+Copyright (c) 2026 Jesús Vega
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

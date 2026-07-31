@@ -52,9 +52,20 @@
     var saved = stored(STORE_KEY);
     if (LANGS.indexOf(saved) !== -1) return saved;
 
-    return (navigator.language || "en").toLowerCase().indexOf("es") === 0
-      ? "es"
-      : "en";
+    /* navigator.languages is the reader's whole ordered preference list, not
+       just their top choice — so someone set to Portuguese, then Spanish, then
+       English gets Spanish rather than falling through to English. Region
+       subtags are dropped: es-PE, es-419 and es all count as Spanish. */
+    var preferred = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || "en"];
+
+    for (var i = 0; i < preferred.length; i++) {
+      var base = String(preferred[i]).toLowerCase().split("-")[0];
+      if (LANGS.indexOf(base) !== -1) return base;
+    }
+
+    return "en";   // anything else: German, Japanese, … falls back to English
   }
 
   langButtons.forEach(function (b) {
